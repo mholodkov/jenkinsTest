@@ -3,7 +3,9 @@ pipeline {
 
     stages {
         stage('Hello') {
-               hello.hello()
+          def hello() {
+            println("Hello World")
+		}		
         }
     }
 }
