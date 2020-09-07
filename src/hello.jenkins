@@ -8,6 +8,7 @@ node {
         
     stage('Hello') {
           sh "ls"
+          def status = "status"
         }
 
     bot("build finish${status}")
