@@ -1,11 +1,14 @@
+              curl -s -X POST https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHonyVnmwiQ1A/sendMessage -d chat_id=-1001300567963 -d text="your message"
 pipeline {
     agent any
 
     stages {
-        stage('Notify') {
+        stage("Using curl example") {
             steps {
-              curl -s -X POST https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHonyVnmwiQ1A/sendMessage -d chat_id=-1001300567963 -d text="your message"
-              }
-          }
+                script {
+                            sh(script: curl -s -X POST https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHonyVnmwiQ1A/sendMessage -d chat_id=-1001300567963 -d text="your message"
+                    }
+                }
+            }
+        }
     }
-}
