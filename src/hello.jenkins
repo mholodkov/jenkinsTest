@@ -4,6 +4,9 @@ pipeline {				//indicate the job is written in Declarative Pipeline
         stage ("build") {		//an arbitrary stage name
             steps {
                 build 'tg'	//this is where we specify which job to invoke.
+                   parameters: [
+                       string(name: 'text', value: qwerty)
+                   ]
             }
         }
     }
