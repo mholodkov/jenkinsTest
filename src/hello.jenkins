@@ -3,15 +3,15 @@ def botUrl = "https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHony
 def bot = { text -> sh "curl -s -X POST ${botUrl} -d chat_id=-1001300567963 -d text='${text}'" }
 
 
-pipeline {
-    agent any
+node {
     bot("build starting")
-
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
+        
+    stage('Hello') {
+       steps {
+          echo 'Hello World'
             }
         }
+
+        bot("build finish${report}")
     }
-}	
+}
