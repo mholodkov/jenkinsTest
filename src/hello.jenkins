@@ -7,9 +7,7 @@ node {
     bot("build starting")
         
     stage('Hello') {
-       steps {
           sh "ls"
-            }
         }
 
         bot("build finish${report}")
