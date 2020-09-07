@@ -7,10 +7,9 @@ node {
     bot("build starting")
         
     stage('Hello') {
-          def report = ""
           sh "ls"
         }
 
-    bot("build finish${report}")
+    bot("build finish")
     }
 
