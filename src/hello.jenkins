@@ -1,5 +1,5 @@
 node('master') {
         stage('test') { 
-            	build job: 'tg' , parameters: [string(name: 'text', value: "test")]
+            	build job: 'tg' , parameters: [string(name: 'chat_id', value: "-1001300567963")]
     }
 }
