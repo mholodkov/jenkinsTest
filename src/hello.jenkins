@@ -1,7 +1,7 @@
 def failureReport = { text -> "\r\n------------ Finish Report ------------\r\n${text}------------ Finish Report Report ------------\r\n" }
 def botUrl = "https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHonyVnmwiQ1A/sendMessage"
 def bot = { text -> sh "curl -s -X POST ${botUrl} -d chat_id=-1001300567963 -d text='${text}'" }
-
+def status = ""
 
 node {
     bot("build starting")
@@ -10,6 +10,6 @@ node {
           sh "ls"
         }
 
-    bot("build finish")
+    bot("build finish${status}")
     }
 
