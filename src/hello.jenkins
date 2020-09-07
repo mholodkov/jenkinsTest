@@ -5,7 +5,7 @@ pipeline {				//indicate the job is written in Declarative Pipeline
             steps {
                 build 'tg'	//this is where we specify which job to invoke.
                    parameters: [
-                       string(name: 'text', value: qwerty)
+                       string(name: 'text', value: 'qwerty')
                    ]
             }
         }
