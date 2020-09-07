@@ -1,16 +1,10 @@
-def failureReport = { text -> "\r\n------------ Finish Report ------------\r\n${text}------------ Finish Report Report ------------\r\n" }
-def botUrl = "https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHonyVnmwiQ1A/sendMessage"
-def bot = { text -> sh "curl -s -X POST ${botUrl} -d chat_id=-1001300567963 -d text='${text}'" }
-def status = ""
-
-node {
-    bot("build starting")
-        
-    stage('Hello') {
-          sh "ls"
-          def status = "status"
+pipeline {				//indicate the job is written in Declarative Pipeline
+    agent any				//agent specifies where the pipeline will execute. 
+    stages {
+        stage ("build") {		//an arbitrary stage name
+            steps {
+                build 'tg'	//this is where we specify which job to invoke.
+            }
         }
-
-    bot("build finish${status}")
     }
-
+}
