@@ -1,8 +1,6 @@
 pipeline {				//indicate the job is written in Declarative Pipeline
     agent any				//agent specifies where the pipeline will execute. 
-    stages {
 	stage ('Starting ART job') {
 	    build job: 'tg', parameters: [[name: 'text', value: 'test']]
-	}
     }
 }
