@@ -5,6 +5,7 @@ def bot = { text -> sh "curl -s -X POST ${botUrl} -d chat_id=-1001300567963 -d t
 
 pipeline {
     agent any
+    bot("build starting")
 
     stages {
         stage('Hello') {
