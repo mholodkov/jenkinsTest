@@ -5,7 +5,8 @@ pipeline {
         stage("Using curl example") {
             steps {
                 script {
-                            sh(script: curl -s -X POST https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHonyVnmwiQ1A/sendMessage -d chat_id=-1001300567963 -d text="your message"
+                            def response = ["curl", "-X", "POST", "-d", "chat_id=-1001300567963", "-d", "text=test4" , "https://api.telegram.org/bot1333583334:AAGV3oSoxaFJX0DBv8q2BUcHonyVnmwiQ1A/sendMessage].execute().text
+
                     }
                 }
             }
